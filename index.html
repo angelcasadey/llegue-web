@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Llegué — Tu app de control de asistencia por geolocalización. Registra entradas y salidas de tu equipo desde cualquier lugar.">
+  <title>Llegué — Tu asistencia donde sea</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <span class="nav-logo"><strong>Llegué</strong></span>
+    <ul class="nav-links">
+      <li><a href="#como-funciona">Cómo funciona</a></li>
+      <li><a href="#planes">Planes</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="#planes" class="nav-cta">Comenzar gratis</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="hero-badge">📍 Geolocalización en tiempo real</span>
+      <h1>Tu asistencia,<br><span>donde sea.</span></h1>
+      <p>Registra entradas y salidas de tu equipo con GPS con <strong>Llegué</strong>. Sin papeles, sin excusas, sin complicaciones.</p>
+      <div class="hero-buttons">
+        <a href="#" class="btn-primary">
+          ⬇️ Descargar en Google Play
+        </a>
+        <a href="#como-funciona" class="btn-secondary">
+          Ver cómo funciona
+        </a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="hero-mockup">
+        <div class="mockup-screen">
+          <div class="mockup-pin">📍</div>
+          <div class="mockup-text">¡Llegué!</div>
+          <div class="mockup-sub">Asistencia registrada · 08:47 AM</div>
+          <div class="mockup-btn">✓ Registrar entrada</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GEOFENCING BANNER -->
+  <section style="padding: 40px 0;">
+    <div class="geofencing-banner">
+      <div class="geofencing-icon">📍</div>
+      <div class="geofencing-content">
+        <span class="geofencing-tag">⚡ Tecnología Geofencing</span>
+        <div class="geofencing-title"><strong>Llegué</strong> usa geofencing, no rastreo continuo</div>
+        <p class="geofencing-desc">
+          A diferencia de los rastreadores GPS, <strong>Llegué</strong> solo registra tu ubicación 
+          en el momento exacto en que tú decides checar. Tu privacidad siempre está protegida.
+        </p>
+        <div class="geofencing-items">
+          <div class="geofencing-item">
+            <span class="check">✓</span> Registra solo al checar
+          </div>
+          <div class="geofencing-item">
+            <span class="check">✓</span> Sin rastreo en segundo plano
+          </div>
+          <div class="geofencing-item">
+            <span class="check">✓</span> Tu ubicación es tuya
+          </div>
+          <div class="geofencing-item">
+            <span class="cross">✗</span> No es un rastreador
+          </div>
+          <div class="geofencing-item">
+            <span class="cross">✗</span> No monitorea fuera del trabajo
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CÓMO FUNCIONA -->
+  <section class="como-funciona" id="como-funciona">
+    <div class="text-center">
+      <div class="section-label">Proceso</div>
+      <h2 class="section-title">Tres pasos y listo</h2>
+      <p class="section-subtitle">Sin instalaciones complicadas, sin capacitaciones largas. Tu equipo empieza a checar el mismo día.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <div class="step-icon">📱</div>
+        <div class="step-title">Crea tu cuenta</div>
+        <p class="step-desc">Regístrate como particular, empresa u organizador de eventos. Sin tarjeta de crédito para empezar.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <div class="step-icon">🗺️</div>
+        <div class="step-title">Configura tu ubicación</div>
+        <p class="step-desc">Marca en el mapa dónde está tu oficina o lugar de trabajo. Define el radio de geofencing.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <div class="step-icon">✅</div>
+        <div class="step-title">Tu equipo checa</div>
+        <p class="step-desc">Al llegar al lugar, la app detecta la ubicación y registra la asistencia automáticamente.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODALIDADES -->
+  <section id="modalidades">
+    <div class="text-center">
+      <div class="section-label">Modalidades</div>
+      <h2 class="section-title">Para cada tipo de usuario</h2>
+      <p class="section-subtitle">Llegué se adapta a tu forma de trabajar, no al revés.</p>
+    </div>
+    <div class="modalidades-grid">
+      <div class="modalidad-card">
+        <div class="modalidad-icon">👤</div>
+        <div class="modalidad-title">Particular</div>
+        <p class="modalidad-desc">Trabajas por tu cuenta y quieres llevar un registro de tu jornada diaria. Sin complicaciones.</p>
+        <span class="modalidad-tag">Gratis con publicidad</span>
+      </div>
+      <div class="modalidad-card">
+        <div class="modalidad-icon">🏢</div>
+        <div class="modalidad-title">Empresa</div>
+        <p class="modalidad-desc">Gestiona la asistencia de todo tu equipo, aprueba registros, exporta reportes y más.</p>
+        <span class="modalidad-tag paid">Desde $149 MXN/mes</span>
+      </div>
+      <div class="modalidad-card">
+        <div class="modalidad-icon">🎪</div>
+        <div class="modalidad-title">Eventos</div>
+        <p class="modalidad-desc">Controla el aforo y registro de asistentes a tus eventos con código único y GPS.</p>
+        <span class="modalidad-tag">Gratis hasta 10 personas</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANES Y PRECIOS -->
+  <section class="precios" id="planes">
+    <div class="text-center">
+      <div class="section-label">Precios</div>
+      <h2 class="section-title">Planes para empresas</h2>
+      <p class="section-subtitle">Sin contratos, sin permanencia. Cancela cuando quieras.</p>
+    </div>
+    <div class="precios-grid">
+      <div class="precio-card">
+        <div class="precio-plan">Plan Básico</div>
+        <div class="precio-amount">$149 <span>MXN/mes</span></div>
+        <div class="precio-empleados">1 a 5 empleados</div>
+        <ul class="precio-features">
+          <li>Check-in y check-out GPS</li>
+          <li>Dashboard de administrador</li>
+          <li>Exportar reportes XLS y PDF</li>
+          <li>Historial ilimitado</li>
+          <li>Sin publicidad</li>
+        </ul>
+        <a href="https://geoattend-production-7693.up.railway.app" class="btn-plan btn-plan-secondary">Contratar ahora</a>
+      </div>
+      <div class="precio-card popular">
+        <div class="popular-badge">⭐ El más elegido</div>
+        <div class="precio-plan">Plan Crecimiento</div>
+        <div class="precio-amount">$349 <span>MXN/mes</span></div>
+        <div class="precio-empleados">6 a 20 empleados</div>
+        <ul class="precio-features">
+          <li>Todo lo del Plan Básico</li>
+          <li>Hasta 20 empleados</li>
+          <li>Reportes avanzados</li>
+          <li>Soporte prioritario</li>
+        </ul>
+        <a href="https://geoattend-production-7693.up.railway.app" class="btn-plan btn-plan-primary">Contratar ahora</a>
+      </div>
+      <div class="precio-card">
+        <div class="precio-plan">Plan Empresa</div>
+        <div class="precio-amount">$599 <span>MXN/mes</span></div>
+        <div class="precio-empleados">21 a 50 empleados</div>
+        <ul class="precio-features">
+          <li>Todo lo del Plan Crecimiento</li>
+          <li>Hasta 50 empleados</li>
+          <li>Múltiples oficinas</li>
+          <li>Acceso anticipado a nuevas funciones</li>
+        </ul>
+        <a href="https://geoattend-production-7693.up.railway.app" class="btn-plan btn-plan-secondary">Contratar ahora</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="text-center">
+      <div class="section-label">Preguntas frecuentes</div>
+      <h2 class="section-title">Todo lo que necesitas saber</h2>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="faq-question">¿Funciona sin internet?</div>
+        <p class="faq-answer">El check-in requiere conexión a internet para registrar y validar la ubicación GPS en tiempo real.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">¿Qué pasa si el GPS falla?</div>
+        <p class="faq-answer">El empleado puede hacer un check-in manual con motivo. El administrador lo revisa y aprueba o rechaza.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">¿Puedo cancelar en cualquier momento?</div>
+        <p class="faq-answer">Sí. Sin contratos ni permanencia. Cancela cuando quieras desde tu perfil en la app.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">¿Mis datos están seguros?</div>
+        <p class="faq-answer">Sí. Todos los datos se almacenan cifrados en servidores seguros en la nube. Cumplimos con la LFPDPPP.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">¿Cuántos empleados puedo agregar?</div>
+        <p class="faq-answer">Desde 1 hasta 50 empleados según el plan. Para equipos más grandes, contáctanos para un precio personalizado.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">¿Cómo funciona el modo Eventos?</div>
+        <p class="faq-answer">Con <strong>Llegué</strong>, creas un evento con ubicación y código único. Tus invitados se registran sin necesidad de cuenta y hacen check-in GPS el día del evento.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="contacto" id="contacto">
+    <div class="text-center">
+      <div class="section-label">Soporte</div>
+      <h2 class="section-title">¿Tienes dudas?</h2>
+      <p class="section-subtitle">Estamos aquí para ayudarte. Elige el canal que prefieras.</p>
+    </div>
+    <div class="contacto-grid">
+      <div class="contacto-card">
+        <div class="contacto-icon">📧</div>
+        <div class="contacto-title">Correo electrónico</div>
+        <p class="contacto-desc">Respondemos en menos de 24 horas hábiles.</p>
+        <a href="mailto:hola@llegue.mx" class="contacto-link">hola@llegue.mx</a>
+      </div>
+      <div class="contacto-card">
+        <div class="contacto-icon">💬</div>
+        <div class="contacto-title">WhatsApp</div>
+        <p class="contacto-desc">Atención directa de lunes a viernes de 9am a 6pm.</p>
+        <a href="https://wa.me/521XXXXXXXXXX" class="contacto-link">Escribir por WhatsApp</a>
+      </div>
+      <div class="contacto-card">
+        <div class="contacto-icon">📱</div>
+        <div class="contacto-title">Descarga la app</div>
+        <p class="contacto-desc">Disponible para Android. iOS próximamente.</p>
+        <a href="#" class="contacto-link">Google Play Store</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">Llegué</div>
+        <p class="footer-tagline"><strong>Llegué</strong> es tu app de control de asistencia por geolocalización. Simple, confiable y hecha para México.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Producto</div>
+        <ul class="footer-links">
+          <li><a href="#como-funciona">Cómo funciona</a></li>
+          <li><a href="#planes">Planes y precios</a></li>
+          <li><a href="#faq">Preguntas frecuentes</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Legal</div>
+        <ul class="footer-links">
+          <li><a href="terminos.html">Términos y condiciones</a></li>
+          <li><a href="privacidad.html">Política de privacidad</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Llegué. Todos los derechos reservados.</span>
+      <span class="footer-copy">Hecho con ❤️ en México</span>
+    </div>
+  </footer>
+
+</body>
+</html>
