@@ -49,9 +49,9 @@
   padding: 7px 14px;
   border-radius: 999px;
   font: 600 12.5px/1 'Inter', system-ui, sans-serif;
-  color: rgba(255, 255, 255, 0.9);
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #14181A;
+  background: rgba(20, 24, 26, 0.08);
+  border: 1px solid rgba(20, 24, 26, 0.18);
   opacity: 0;
 }
 .ev__tag:first-child { opacity: 1; }
