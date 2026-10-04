@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/hero-demo.css">
+  <link rel="stylesheet" href="css/hero-eventos.css">
 </head>
 <body>
 
@@ -158,6 +159,58 @@
       <div class="section-head">
         <h2>El "Ticketmaster" para PyMEs mexicanas</h2>
         <p>Gestiona tus eventos con cobro de entrada sin WhatsApp ni libretas</p>
+      </div>
+
+      <div class="events__stage">
+        <div class="ev" data-llegue-eventos role="img"
+             aria-label="Demostración del flujo de eventos: el organizador crea un evento con cobro de entrada, la asistente se registra y sube su comprobante, el organizador la aprueba, ella recibe su código QR y el staff lo escanea en la puerta.">
+
+          <div class="ev__col">
+            <div class="ev__tags" aria-hidden="true">
+              <span class="ev__tag" data-windows="0-14200,18300-19200">Organizador</span>
+              <span class="ev__tag" data-windows="14200-18300">Staff en la puerta</span>
+            </div>
+            <div class="ev__phone" data-role="org">
+              <div class="ev__screen">
+                  <img class="ev__scene" src="assets/demo-eventos/org-1-crear-evento.webp" width="440" height="886" alt="" decoding="async">
+                  <img class="ev__scene" src="assets/demo-eventos/org-2-evento-creado.webp" width="440" height="886" alt="" decoding="async">
+                  <img class="ev__scene" src="assets/demo-eventos/org-3-lista-pendiente.webp" width="440" height="886" alt="" decoding="async">
+                  <img class="ev__scene" src="assets/demo-eventos/org-4-aprobar.webp" width="440" height="886" alt="" decoding="async">
+                <div class="ev__scene ev__scene--scan" aria-hidden="true">
+                  <div class="ev__scan-frame">
+                    <i class="ev__corner ev__corner--tl"></i><i class="ev__corner ev__corner--tr"></i>
+                    <i class="ev__corner ev__corner--bl"></i><i class="ev__corner ev__corner--br"></i>
+                    <i class="ev__scan-line"></i>
+                  </div>
+                </div>
+                <div class="ev__scene ev__scene--ok" aria-hidden="true">
+                  <div class="ev__ok-badge">
+                    <svg class="ev__ok-check" viewBox="0 0 24 24"><path d="M5.5 12.5l4.2 4.2L18.5 8" pathLength="30"/></svg>
+                  </div>
+                  <p class="ev__ok-title">Acceso confirmado</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ev__col">
+            <div class="ev__tags" aria-hidden="true">
+              <span class="ev__tag">Asistente</span>
+            </div>
+            <div class="ev__phone" data-role="spec">
+              <div class="ev__screen">
+                  <img class="ev__scene" src="assets/demo-eventos/spec-1-inicio.webp" width="440" height="886" alt="" decoding="async">
+                  <img class="ev__scene" src="assets/demo-eventos/spec-2-buscar.webp" width="440" height="886" alt="" decoding="async">
+                  <img class="ev__scene" src="assets/demo-eventos/spec-3-evento.webp" width="440" height="886" alt="" decoding="async">
+                  <img class="ev__scene" src="assets/demo-eventos/spec-4-registro.webp" width="440" height="886" alt="" decoding="async">
+                  <img class="ev__scene" src="assets/demo-eventos/spec-5-pendiente.webp" width="440" height="886" alt="" decoding="async">
+                  <img class="ev__scene" src="assets/demo-eventos/spec-6-aprobado.webp" width="440" height="886" alt="" decoding="async">
+                  <img class="ev__scene" src="assets/demo-eventos/spec-7-qr.webp" width="440" height="886" alt="" decoding="async">
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
 
       <div class="events__compare">
@@ -334,5 +387,6 @@
     // mandar a un número inválido.
   </script>
   <script src="js/hero-demo.js" defer></script>
+  <script src="js/hero-eventos.js" defer></script>
 </body>
 </html>

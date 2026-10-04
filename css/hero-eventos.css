@@ -1,0 +1,229 @@
+/* ===========================================================
+   Llegué — Demo animada de Eventos (sección #eventos)
+   Dos teléfonos: Organizador (izq.) y Asistente (der.).
+   La línea de tiempo vive en js/hero-eventos.js.
+   Autocontenido: no depende de hero-demo.css.
+   =========================================================== */
+
+/* ---------- escenario oscuro ---------- */
+.events__stage {
+  background: #0D1117;
+  border-radius: 20px;
+  padding: 40px 16px 44px;
+  margin-bottom: 32px;
+  overflow: hidden;
+}
+
+.ev {
+  --w: min(250px, 40vw);              /* ancho de cada teléfono */
+  --ev-green: #1F8A4C;
+  --ev-yellow: #F2B705;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: clamp(20px, 5vw, 56px);
+  isolation: isolate;
+}
+
+.ev__col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: var(--w);
+}
+
+/* ---------- etiquetas de rol ---------- */
+.ev__tags {
+  position: relative;
+  width: 100%;
+  height: 30px;
+}
+.ev__tag {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  padding: 7px 14px;
+  border-radius: 999px;
+  font: 600 12.5px/1 'Inter', system-ui, sans-serif;
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  opacity: 0;
+}
+.ev__tag:first-child { opacity: 1; }
+
+/* ---------- marco del teléfono (versión sobre fondo oscuro) ---------- */
+.ev__phone {
+  position: relative;
+  width: 100%;
+  padding: calc(var(--w) * 0.03);
+  background: #1A1F1D;
+  border-radius: calc(var(--w) * 0.14);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.16),
+    0 30px 60px -24px rgba(0, 0, 0, 0.75);
+  will-change: transform, opacity;
+}
+
+.ev__screen {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  aspect-ratio: 440 / 886;            /* proporción real de las capturas recortadas */
+  background: #1A1F1D;                /* igual al bisel: sin borde claro en las esquinas de pantallas oscuras */
+  border-radius: calc(var(--w) * 0.11);
+}
+.ev__screen::after {                   /* cámara frontal */
+  content: '';
+  position: absolute;
+  z-index: 10;
+  top: calc(var(--w) * 0.028);
+  left: 50%;
+  width: calc(var(--w) * 0.03);
+  aspect-ratio: 1;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: #0E1110;
+}
+
+/* ---------- pantallas ---------- */
+.ev__scene {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  opacity: 0;
+  will-change: opacity;
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
+.ev__scene:first-of-type { opacity: 1; }   /* sin JS: primera pantalla */
+
+/* ---------- scanner (recreado en CSS: es geometría, no datos) ---------- */
+.ev__scene--scan {
+  background: #0A0C0B;
+}
+.ev__scan-frame {
+  position: absolute;
+  left: 19%;
+  right: 19%;
+  top: 32%;
+  aspect-ratio: 1;
+}
+.ev__corner {
+  position: absolute;
+  width: 17%;
+  aspect-ratio: 1;
+  border: 0 solid var(--ev-yellow);
+}
+.ev__corner--tl { top: 0;    left: 0;  border-top-width:    calc(var(--w) * .017); border-left-width:  calc(var(--w) * .017); border-top-left-radius:     calc(var(--w) * .04); }
+.ev__corner--tr { top: 0;    right: 0; border-top-width:    calc(var(--w) * .017); border-right-width: calc(var(--w) * .017); border-top-right-radius:    calc(var(--w) * .04); }
+.ev__corner--bl { bottom: 0; left: 0;  border-bottom-width: calc(var(--w) * .017); border-left-width:  calc(var(--w) * .017); border-bottom-left-radius:  calc(var(--w) * .04); }
+.ev__corner--br { bottom: 0; right: 0; border-bottom-width: calc(var(--w) * .017); border-right-width: calc(var(--w) * .017); border-bottom-right-radius: calc(var(--w) * .04); }
+.ev__scan-line {
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  top: 4%;
+  height: calc(var(--w) * .008);
+  min-height: 2px;
+  border-radius: 2px;
+  background: var(--ev-yellow);
+  box-shadow: 0 0 14px 2px rgba(242, 183, 5, 0.5);
+  opacity: 0;
+}
+
+/* ---------- resultado: acceso confirmado ---------- */
+.ev__scene--ok {
+  background: #10B981;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--w) * 0.06);
+  color: #fff;
+}
+.ev__ok-badge {
+  width: calc(var(--w) * 0.3);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ev__ok-check {
+  width: 56%;
+  fill: none;
+  stroke: #fff;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 30;
+  stroke-dashoffset: 0;
+}
+.ev__ok-title {
+  margin: 0;
+  font: 700 calc(var(--w) * 0.068) / 1.2 'Inter', system-ui, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+/* ---------- efectos (los crea js/hero-eventos.js) ---------- */
+.ev__touch,
+.ev__ripple {
+  position: absolute;
+  z-index: 5;
+  width: calc(var(--w) * 0.13);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+.ev__touch  { background: rgba(20, 24, 26, 0.22); border: 2px solid rgba(255, 255, 255, 0.9); }
+.ev__ripple { border: 2px solid var(--ev-green); }
+
+.ev__press {
+  position: absolute;
+  z-index: 4;
+  background: rgba(0, 0, 0, 0.16);
+  opacity: 0;
+  pointer-events: none;
+}
+.ev__pulse {
+  position: absolute;
+  z-index: 4;
+  border: 2px solid var(--ev-green);
+  border-radius: 999px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+/* ---------- móvil: los dos teléfonos se traslapan; el activo va al frente ---------- */
+@media (max-width: 640px) {
+  .events__stage { padding: 28px 8px 32px; }
+  .ev { --w: min(215px, 48vw); gap: 0; }
+  .ev__col + .ev__col { margin-left: calc(var(--w) * -0.22); }
+  /* el teléfono de la derecha tapa ~22 % del de la izquierda: se desplaza el
+     contenido recreado en CSS hacia la parte visible */
+  .ev__scan-frame { left: 9%; right: 33%; }
+  .ev__scene--ok  { padding-right: 20%; }
+  .ev__ok-title   { font-size: calc(var(--w) * 0.054); }
+}
+
+/* ---------- movimiento reducido: sin animación, una pantalla representativa por teléfono ---------- */
+@media (prefers-reduced-motion: reduce) {
+  [data-role="org"]  .ev__scene:first-of-type   { opacity: 0; }
+  [data-role="org"]  .ev__scene:nth-of-type(4)  { opacity: 1; }   /* aprobar */
+  [data-role="spec"] .ev__scene:first-of-type   { opacity: 0; }
+  [data-role="spec"] .ev__scene:nth-of-type(6)  { opacity: 1; }   /* aprobado */
+  .ev__touch, .ev__ripple, .ev__press, .ev__pulse { display: none; }
+}
