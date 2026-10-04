@@ -184,36 +184,6 @@ main > section {
 }
 
 .hero__mockup { display: flex; justify-content: center; }
-.phone {
-  width: 280px;
-  background: var(--background);
-  border: 1px solid var(--border);
-  border-radius: 28px;
-  padding: var(--space-lg);
-  box-shadow: var(--shadow-lift);
-  display: flex; flex-direction: column; align-items: center; gap: var(--space-lg);
-}
-.phone__badge {
-  align-self: flex-start;
-  display: flex; align-items: center; gap: 6px;
-  color: var(--primary); font-weight: 700; font-size: 15px;
-}
-.phone__checkin {
-  width: 170px; height: 170px;
-  border-radius: 50%;
-  background: var(--primary);
-  color: #fff;
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: var(--space-sm);
-  font-weight: 600; font-size: 14px; text-align: center;
-}
-.phone__result {
-  display: flex; align-items: center; gap: var(--space-sm);
-  background: var(--primary-light); color: var(--primary);
-  border-radius: var(--radius-md);
-  padding: var(--space-sm) var(--space-md);
-  font-size: 13px; font-weight: 600;
-}
 
 @media (min-width: 900px) {
   .hero { flex-direction: row; align-items: center; text-align: left; }

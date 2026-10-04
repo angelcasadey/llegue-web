@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/hero-demo.css">
 </head>
 <body>
 
@@ -51,19 +52,20 @@
         <p class="hero__note">Próximamente en Google Play</p>
       </div>
 
-      <div class="hero__mockup" aria-hidden="true">
-        <div class="phone">
-          <div class="phone__badge">
-            <svg class="icon" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
-            <span>¡Llegué!</span>
-          </div>
-          <div class="phone__checkin">
-            <svg class="icon icon--lg" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
-            <span>Registrar entrada</span>
-          </div>
-          <div class="phone__result">
-            <svg class="icon" viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>
-            <span>Asistencia registrada · 08:47 AM</span>
+      <div class="hero__mockup">
+        <div class="demo demo--peek" data-llegue-demo role="img"
+             aria-label="Demostración de la app Llegué: el empleado registra su entrada con un toque y el administrador aprueba su salida desde el panel.">
+          <div class="demo__stage">
+            <div class="demo__phone">
+              <div class="demo__screen">
+                <img class="demo__scene" src="assets/demo/01-empleado-listo.webp"      width="528" height="1063" alt="" fetchpriority="high" decoding="async">
+                <img class="demo__scene" src="assets/demo/02-empleado-registrado.webp" width="528" height="1063" alt="" decoding="async">
+                <img class="demo__scene" src="assets/demo/03-admin-puntual.webp"       width="528" height="1063" alt="" decoding="async">
+                <img class="demo__scene" src="assets/demo/04-empleado-pendiente.webp"  width="528" height="1063" alt="" decoding="async">
+                <img class="demo__scene" src="assets/demo/05-admin-por-aprobar.webp"   width="528" height="1063" alt="" decoding="async">
+                <img class="demo__scene" src="assets/demo/06-admin-aprobado.webp"      width="528" height="1063" alt="" decoding="async">
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -331,5 +333,6 @@
     // el número. Mientras tanto, el enlace queda inerte (#) para no
     // mandar a un número inválido.
   </script>
+  <script src="js/hero-demo.js" defer></script>
 </body>
 </html>
