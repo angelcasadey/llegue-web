@@ -168,7 +168,8 @@
           payBtn.textContent = 'Continuar al pago';
           return;
         }
-        window.location.href = result.data.initPoint;
+        // TEMP: sandbox mientras se valida monto exacto y descuentos con MP. Cambiar a result.data.initPoint al pasar a producción real.
+        window.location.href = result.data.sandboxInitPoint;
       })
       .catch(function () {
         showError('No se pudo conectar con el servidor. Intenta de nuevo.');
