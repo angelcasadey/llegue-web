@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Planes — Llegué</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="../css/admin.css">
+</head>
+<body class="admin-page">
+  <div class="admin-topbar">Llegué — Portal de administración</div>
+
+  <div class="admin-card admin-card--wide">
+    <h2>Elige tu plan</h2>
+
+    <div id="error-box" class="admin-error" style="display:none;"></div>
+
+    <div class="admin-plans-grid" id="plans-grid"></div>
+
+    <div class="admin-field">
+      <label for="coupon-code">¿Tienes un cupón?</label>
+      <div class="admin-coupon-row">
+        <input type="text" id="coupon-code" placeholder="Código de cupón" autocomplete="off">
+        <button type="button" id="apply-coupon-btn">Aplicar</button>
+      </div>
+    </div>
+
+    <div id="coupon-message" style="display:none;"></div>
+    <div id="discount-box" class="admin-discount-box" style="display:none;">
+      <div class="row"><span>Precio original</span><span id="discount-original"></span></div>
+      <div class="row"><span>Descuento</span><span id="discount-amount"></span></div>
+      <div class="row final"><span>Total a pagar</span><span id="discount-final"></span></div>
+    </div>
+
+    <div class="admin-actions">
+      <button type="button" class="admin-btn" id="pay-btn">Continuar al pago</button>
+      <a href="cuenta.html" class="admin-btn admin-btn--secondary">Volver a mi cuenta</a>
+    </div>
+  </div>
+
+  <script src="session.js"></script>
+  <script src="planes.js"></script>
+</body>
+</html>

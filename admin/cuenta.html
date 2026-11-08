@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mi cuenta — Llegué</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="../css/admin.css">
+</head>
+<body class="admin-page">
+  <div class="admin-topbar">Llegué — Portal de administración</div>
+
+  <div class="admin-card admin-card--wide">
+    <h2>Mi cuenta</h2>
+
+    <div id="loading" class="admin-info">Cargando información de tu cuenta...</div>
+    <div id="error-box" class="admin-error" style="display:none;"></div>
+    <div id="not-admin-box" class="admin-info" style="display:none;">
+      Esta cuenta no administra la suscripción de una empresa.
+    </div>
+
+    <div id="account-content" style="display:none;">
+      <div class="admin-status-row">
+        <span class="label">Cuenta</span>
+        <span class="value" id="user-name"></span>
+      </div>
+      <div class="admin-status-row">
+        <span class="label">Correo</span>
+        <span class="value" id="user-email"></span>
+      </div>
+      <div class="admin-status-row">
+        <span class="label">Estado</span>
+        <span class="value"><span class="admin-badge" id="status-badge"></span></span>
+      </div>
+      <div class="admin-status-row">
+        <span class="label">Plan</span>
+        <span class="value" id="plan-name"></span>
+      </div>
+      <div class="admin-status-row" id="detail-row">
+        <span class="label" id="detail-label"></span>
+        <span class="value" id="detail-value"></span>
+      </div>
+
+      <div class="admin-actions">
+        <a href="planes.html" class="admin-btn" id="ver-planes-btn">Ver planes</a>
+      </div>
+    </div>
+
+    <span class="admin-logout-link" id="logout-link">Cerrar sesión</span>
+  </div>
+
+  <script src="session.js"></script>
+  <script src="cuenta.js"></script>
+</body>
+</html>
