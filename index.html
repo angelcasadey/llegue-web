@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Llegué — Tu asistencia donde sea</title>
-  <meta name="description" content="Llegué — Tu app de control de asistencia por geolocalización. Registra entradas y salidas de tu equipo desde cualquier lugar.">
+  <title>Llegué — Listo para la reforma de 40 horas</title>
+  <meta name="description" content="Llegué — Registro electrónico de jornada conforme a la reforma laboral mexicana. Horas extra, comida/descanso e incidencias calculados automáticamente, con expediente laboral exportable.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -20,7 +20,6 @@
       <a href="#" class="navbar__logo">Llegué</a>
       <nav class="navbar__links" aria-label="Navegación principal">
         <a href="#como-funciona">Cómo funciona</a>
-        <a href="#eventos">Eventos</a>
         <a href="#planes">Planes</a>
         <a href="#faq">FAQ</a>
         <a href="#contacto">Contacto</a>
@@ -33,40 +32,34 @@
   <main>
 
     <!-- ===== HERO ===== -->
-    <section class="hero">
+    <section class="hero" aria-labelledby="hero-title">
       <div class="hero__content">
-        <span class="badge badge--secondary">
-          <svg class="icon" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
-          Geolocalización en tiempo real
-        </span>
-        <h1>Tu asistencia,<br>donde sea.</h1>
-        <p class="hero__lede">
-          Registra entradas y salidas de tu equipo con GPS. Sin papeles,
-          sin excusas, sin complicaciones.
-        </p>
-        <div class="hero__actions">
-          <a href="#" class="btn btn--primary btn--lg">
-            <svg class="icon" viewBox="0 0 24 24"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
-            Descargar en Google Play
-          </a>
-          <a href="#como-funciona" class="btn btn--outline btn--lg">Ver cómo funciona</a>
+        <span class="badge badge--secondary reveal reveal--1">⚖️ Reforma LFT · DOF 1 de mayo de 2026</span>
+        <h1 id="hero-title" class="reveal reveal--2">Tu empresa tiene hasta <span class="date-highlight">enero de 2027</span> para registrar la jornada electrónicamente.</h1>
+        <p class="hero__lede reveal reveal--3">La reforma obliga a todos los patrones, sin excepción de tamaño, a llevar registro electrónico de entrada y salida. <strong>La multa por no cumplir va de 250 a 5,000 UMA — hasta $586,550 MXN por infracción.</strong></p>
+        <div class="hero__actions reveal reveal--4">
+          <a href="#" class="btn btn--primary btn--lg">Empezar gratis 15 días</a>
+          <a href="#reforma" class="btn btn--outline btn--lg">Ver qué exige la ley</a>
         </div>
-        <p class="hero__note">Próximamente en Google Play</p>
+        <div class="stat-row reveal reveal--5" role="group" aria-label="Datos clave de la reforma">
+          <div class="stat-unit"><div class="stat-unit__num" data-count-to="46">0</div><div class="stat-unit__label">Horas/semana en 2027</div></div>
+          <div class="stat-unit"><div class="stat-unit__num" data-count-to="9" data-suffix="h">0</div><div class="stat-unit__label">Tope horas extra 2026-27</div></div>
+          <div class="stat-unit"><div class="stat-unit__num">1 ene</div><div class="stat-unit__label">2027 — obligación plena</div></div>
+        </div>
+        <p class="hero__note">Próximamente en Google Play · <a href="#" style="color:inherit;text-decoration:underline">descarga anticipada</a></p>
       </div>
 
-      <div class="hero__mockup">
-        <div class="demo demo--peek" data-llegue-demo role="img"
+      <div class="hero__mockup reveal reveal--3">
+        <div class="demo" data-llegue-demo role="img"
              aria-label="Demostración de la app Llegué: el empleado registra su entrada con un toque y el administrador aprueba su salida desde el panel.">
-          <div class="demo__stage">
-            <div class="demo__phone">
-              <div class="demo__screen">
-                <img class="demo__scene" src="assets/demo/01-empleado-listo.webp"      width="528" height="1063" alt="" fetchpriority="high" decoding="async">
-                <img class="demo__scene" src="assets/demo/02-empleado-registrado.webp" width="528" height="1063" alt="" decoding="async">
-                <img class="demo__scene" src="assets/demo/03-admin-puntual.webp"       width="528" height="1063" alt="" decoding="async">
-                <img class="demo__scene" src="assets/demo/04-empleado-pendiente.webp"  width="528" height="1063" alt="" decoding="async">
-                <img class="demo__scene" src="assets/demo/05-admin-por-aprobar.webp"   width="528" height="1063" alt="" decoding="async">
-                <img class="demo__scene" src="assets/demo/06-admin-aprobado.webp"      width="528" height="1063" alt="" decoding="async">
-              </div>
+          <div class="demo__phone">
+            <div class="demo__screen">
+              <img class="demo__scene" src="assets/demo/01-empleado-listo.webp"      width="528" height="1063" alt="" fetchpriority="high" decoding="async">
+              <img class="demo__scene" src="assets/demo/02-empleado-registrado.webp" width="528" height="1063" alt="" decoding="async">
+              <img class="demo__scene" src="assets/demo/03-admin-puntual.webp"       width="528" height="1063" alt="" decoding="async">
+              <img class="demo__scene" src="assets/demo/04-empleado-pendiente.webp"  width="528" height="1063" alt="" decoding="async">
+              <img class="demo__scene" src="assets/demo/05-admin-por-aprobar.webp"   width="528" height="1063" alt="" decoding="async">
+              <img class="demo__scene" src="assets/demo/06-admin-aprobado.webp"      width="528" height="1063" alt="" decoding="async">
             </div>
           </div>
         </div>
@@ -74,89 +67,90 @@
     </section>
     <p style="text-align:center;font-size:12px;color:#8B958F;margin-top:-16px;margin-bottom:32px;padding:0 16px;">Imágenes ilustrativas · La interfaz puede variar según la versión de la app.</p>
 
-    <!-- ===== GEOFENCING (protagonismo visual) ===== -->
-    <section class="geofencing">
-      <div class="geofencing__inner">
-        <div class="geofencing__text">
-          <span class="badge badge--on-dark">
-            <svg class="icon" viewBox="0 0 24 24"><path d="M13 2L3 14h7l-1 8 11-14h-7l1-6z"/></svg>
-            Tecnología Geofencing
-          </span>
-          <h2>Llegué usa geofencing, no rastreo continuo</h2>
-          <p>
-            A diferencia de los rastreadores GPS, Llegué solo registra tu
-            ubicación en el momento exacto en que tú decides checar. Tu
-            privacidad siempre está protegida.
-          </p>
+    <!-- ===== LA REFORMA ===== -->
+    <section id="reforma" class="scroll-reveal" aria-labelledby="legal-title">
+      <div class="section-head">
+        <span class="badge badge--secondary">Fuente: DOF, Art. 132 fracc. XXXIV LFT</span>
+        <h2 id="legal-title">Lo que de verdad exige la reforma</h2>
+        <p>Oficial, tal como lo publicó el DOF el 1 de mayo de 2026.</p>
+      </div>
+      <div class="legal__grid">
+        <div class="legal-card legal-card--highlight">
+          <h3><svg class="icon" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>Registro con valor de prueba plena</h3>
+          <p>Si el método de registro fue acordado entre empresa y trabajador, el registro electrónico hace prueba plena ante la autoridad. Llegué ya pide esa aceptación explícita a cada empleado.</p>
+          <span class="cite">Art. 132 fracc. XXXIV LFT — regla procesal del dictamen, DOF 1-may-2026</span>
         </div>
-        <div class="geofencing__compare">
-          <ul class="compare-list compare-list--yes">
-            <li>Registra solo al checar</li>
-            <li>Sin rastreo en segundo plano</li>
-            <li>Tu ubicación es tuya</li>
-          </ul>
-          <ul class="compare-list compare-list--no">
-            <li>No es un rastreador</li>
-            <li>No monitorea fuera del trabajo</li>
-          </ul>
+        <div class="legal-card">
+          <h3><svg class="icon" viewBox="0 0 24 24"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="9"/></svg>Calendario de reducción de jornada</h3>
+          <p>48h en 2026, bajando 2 horas cada 1 de enero hasta llegar a 40h en 2030. Sin reducir sueldos ni prestaciones.</p>
+          <span class="cite">Decreto de reforma constitucional al Art. 123, DOF 3-mar-2026 + reforma LFT, DOF 1-may-2026</span>
+        </div>
+        <div class="legal-card">
+          <h3><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/></svg>Multa por incumplimiento</h3>
+          <div class="legal-stat"><span data-count-to="29327" data-prefix="$" data-commas>$0</span> – <span data-count-to="586550" data-prefix="$" data-commas>$0</span></div>
+          <p style="margin-top:4px">MXN por infracción (250 a 5,000 UMA, valor oficial INEGI 2026: $117.31/día).</p>
+          <span class="cite">Art. 994 fracc. IV Bis LFT</span>
+        </div>
+        <div class="legal-card">
+          <h3><svg class="icon" viewBox="0 0 24 24"><path d="M12 2v6M12 22v-6M2 12h6M22 12h-6"/></svg>Cero geolocalización de más</h3>
+          <p>La geolocalización GPS es un dato personal (criterio INAI). Llegué solo la captura al momento exacto del check-in — nunca rastreo continuo, nunca para empleados en teletrabajo.</p>
+          <span class="cite">LFPDPPP + Art. 330-I LFT (proporcionalidad en supervisión de teletrabajo)</span>
         </div>
       </div>
     </section>
 
-    <!-- ===== TRES PASOS ===== -->
-    <section class="steps" id="como-funciona">
+    <!-- ===== CÓMO FUNCIONA ===== -->
+    <section class="steps scroll-reveal" id="como-funciona">
       <div class="section-head">
-        <h2>Tres pasos y listo</h2>
-        <p>Sin instalaciones complicadas, sin capacitaciones largas. Tu equipo empieza a checar el mismo día.</p>
+        <h2>Cómo cumple Llegué, en 3 pasos</h2>
+        <p>Sin checador físico, costoso y fácil de manipular.</p>
       </div>
       <div class="steps__grid">
         <div class="step-card">
           <span class="step-card__number">1</span>
-          <h3>Crea tu cuenta</h3>
-          <p>Regístrate como particular, empresa u organizador de eventos. Sin tarjeta de crédito para empezar.</p>
+          <h3>El empleado checa con GPS</h3>
+          <p>Entrada y salida con un toque, validadas contra la geocerca de su oficina.</p>
         </div>
         <div class="step-card">
           <span class="step-card__number">2</span>
-          <h3>Configura tu ubicación</h3>
-          <p>Marca en el mapa dónde está tu oficina o lugar de trabajo. Define el radio de geofencing.</p>
+          <h3>Llegué calcula todo solo</h3>
+          <p>Horas trabajadas, horas extra al doble/triple pago según el tope legal vigente, comida/descanso, incidencias.</p>
         </div>
         <div class="step-card">
           <span class="step-card__number">3</span>
-          <h3>Tu equipo checa</h3>
-          <p>Al llegar al lugar, la app detecta la ubicación y registra la asistencia automáticamente.</p>
+          <h3>Expediente laboral listo</h3>
+          <p>Exporta el expediente auditable en PDF o Excel cuando la STPS lo pida.</p>
         </div>
       </div>
     </section>
 
     <!-- ===== MODALIDADES ===== -->
-    <section class="modalities">
+    <section class="modalities scroll-reveal" id="modalidades">
       <div class="section-head">
-        <h2>¿Cómo usas Llegué?</h2>
-        <p>Llegué se adapta a tu forma de trabajar, no al revés.</p>
+        <h2>Para cada forma de trabajar</h2>
+        <p>Oficina, particular, o remoto — sin pedirle a nadie más datos de los necesarios.</p>
       </div>
       <div class="modalities__grid">
         <div class="modality-card">
-          <svg class="icon icon--lg modality-card__icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.2"/><path d="M5 20c0-3.6 3-6 7-6s7 2.4 7 6"/></svg>
-          <h3>Particular</h3>
-          <p>Trabajas por tu cuenta y quieres llevar un registro de tu jornada diaria. Sin complicaciones.</p>
-          <span class="modality-card__price">Gratis con publicidad</span>
+          <svg class="icon icon--lg modality-card__icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h18"/></svg>
+          <h3>En oficina</h3>
+          <p>Geocerca por GPS: el check-in solo se valida si el empleado está dentro del radio de su oficina.</p>
         </div>
         <div class="modality-card modality-card--featured">
-          <svg class="icon icon--lg modality-card__icon" viewBox="0 0 24 24"><path d="M3 21V9l9-6 9 6v12"/><path d="M9 21v-6h6v6"/></svg>
-          <h3>Empresa</h3>
-          <p>Gestiona la asistencia de todo tu equipo, aprueba registros, exporta reportes y más.</p>
-          <span class="modality-card__price">Desde $199 MXN/mes</span>
+          <svg class="icon icon--lg modality-card__icon" viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg>
+          <h3>Teletrabajo</h3>
+          <p>Cero geolocalización, por decisión de diseño — solo se registra la hora, nunca dónde estás.</p>
         </div>
         <div class="modality-card">
-          <svg class="icon icon--lg modality-card__icon" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M8 15h3"/></svg>
-          <h3>Eventos</h3>
-          <p>Organiza eventos con cobro de entrada. Comprobantes, QR de acceso y base de datos de asistentes. Gestión profesional de accesos para PyMEs.</p>
-          <span class="modality-card__price">Incluido en todos los planes</span>
+          <svg class="icon icon--lg modality-card__icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-7 8-7s8 3 8 7"/></svg>
+          <h3>Independiente</h3>
+          <p>¿Trabajas solo? Crea tu propia oficina y registra tu jornada igual.</p>
         </div>
       </div>
     </section>
 
-    <!-- ===== EVENTOS (sección nueva) ===== -->
+    <!-- ===== EVENTOS — OCULTA a petición del usuario (le encanta, no se toca; respaldo in-place vía comentario HTML, markup intacto) ===== -->
+    <!--
     <section class="events" id="eventos">
       <div class="section-head">
         <h2>Control de acceso profesional para tus eventos</h2>
@@ -244,12 +238,14 @@
         <p>Al terminar el evento, tienes los datos de contacto de todos tus asistentes. Eso vale más que cualquier control de acceso.</p>
       </div>
     </section>
+    -->
 
     <!-- ===== PRECIOS ===== -->
-    <section class="pricing" id="planes">
+    <section class="pricing scroll-reveal" id="planes">
       <div class="section-head">
         <h2>Planes para empresas</h2>
         <p>Sin contratos, sin permanencia. Cancela cuando quieras.</p>
+        <p><span class="trial-badge">✓ 15 días de prueba gratis · Sin tarjeta</span></p>
       </div>
       <div class="pricing__grid">
 
@@ -264,7 +260,7 @@
             <li>Reportes básicos en pantalla</li>
             <li>Soporte por email</li>
           </ul>
-          <a href="#" class="btn btn--outline btn--block">Descargar en Google Play</a>
+          <a href="#" class="btn btn--outline btn--block">Empezar gratis</a>
           <p class="price-card__note">Próximamente en Google Play</p>
         </div>
 
@@ -279,7 +275,7 @@
             <li>Control de horas extra</li>
             <li>Soporte prioritario</li>
           </ul>
-          <a href="#" class="btn btn--primary btn--block">Descargar en Google Play</a>
+          <a href="#" class="btn btn--primary btn--block">Empezar gratis</a>
           <p class="price-card__note">Próximamente en Google Play</p>
         </div>
 
@@ -292,7 +288,7 @@
             <li>Soporte dedicado</li>
             <li>Acceso anticipado a nuevas funciones</li>
           </ul>
-          <a href="#" class="btn btn--outline btn--block">Descargar en Google Play</a>
+          <a href="#" class="btn btn--outline btn--block">Empezar gratis</a>
           <p class="price-card__note">Próximamente en Google Play</p>
         </div>
 
@@ -395,5 +391,57 @@
   </script>
   <script src="js/hero-demo.js" defer></script>
   <script src="js/hero-eventos.js" defer></script>
+  <script>
+    (function () {
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function formatCount(value, el) {
+        var suffix = el.getAttribute('data-suffix') || '';
+        var prefix = el.getAttribute('data-prefix') || '';
+        var text = el.hasAttribute('data-commas') ? value.toLocaleString('es-MX') : String(value);
+        return prefix + text + suffix;
+      }
+
+      function startCount(el) {
+        if (el.dataset.counted) return;
+        el.dataset.counted = '1';
+        var target = parseInt(el.getAttribute('data-count-to'), 10);
+        var start = null;
+        var duration = 900;
+        function step(ts) {
+          if (!start) start = ts;
+          var progress = Math.min((ts - start) / duration, 1);
+          el.textContent = formatCount(Math.round(progress * target), el);
+          if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+
+      if (reduceMotion) {
+        document.querySelectorAll('.reveal').forEach(function (el) { el.style.animation = 'none'; el.style.opacity = '1'; el.style.transform = 'none'; });
+        document.querySelectorAll('.scroll-reveal').forEach(function (el) { el.classList.add('is-visible'); });
+        document.querySelectorAll('[data-count-to]').forEach(function (el) { el.textContent = formatCount(parseInt(el.getAttribute('data-count-to'), 10), el); });
+        return;
+      }
+
+      // Conteo ascendente de los números clave del hero
+      document.querySelectorAll('.hero [data-count-to]').forEach(function (el) {
+        setTimeout(function () { startCount(el); }, 500);
+      });
+
+      // Aparición de secciones al hacer scroll (y conteo de sus números al entrar)
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            entry.target.querySelectorAll('[data-count-to]').forEach(startCount);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      document.querySelectorAll('.scroll-reveal').forEach(function (el) { observer.observe(el); });
+    })();
+  </script>
 </body>
 </html>

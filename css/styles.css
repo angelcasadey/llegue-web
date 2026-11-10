@@ -167,8 +167,50 @@ main > section {
 .hero h1 {
   font-size: clamp(36px, 6vw, 56px);
   font-weight: 800;
+  line-height: 1.3;
   margin: var(--space-lg) 0 var(--space-md);
 }
+.date-highlight {
+  text-decoration: underline;
+  text-decoration-color: var(--secondary);
+  text-decoration-thickness: 4px;
+  text-underline-offset: 5px;
+}
+.stat-row {
+  display: flex; gap: var(--space-md); flex-wrap: wrap;
+  margin-top: var(--space-lg); justify-content: center;
+}
+.stat-unit {
+  background: var(--background);
+  border: 1px solid var(--secondary);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm) var(--space-lg);
+  min-width: 100px; text-align: center;
+}
+.stat-unit__num { font-size: 22px; font-weight: 800; color: var(--primary); }
+.stat-unit__label { font-size: 11px; letter-spacing: 0.02em; color: var(--text-muted); margin-top: 2px; }
+.trial-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--secondary); color: var(--text-primary);
+  font-weight: 700; font-size: 15px;
+  padding: 10px 20px; border-radius: var(--radius-full);
+  margin-top: var(--space-sm); box-shadow: var(--shadow-soft);
+  position: relative;
+}
+.trial-badge::before {
+  content: ''; position: absolute; inset: -4px;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--secondary); opacity: 0.5;
+  animation: pulse 2s ease-out infinite;
+}
+@keyframes pulse { 0% { transform: scale(0.9); opacity: 0.6; } 100% { transform: scale(1.4); opacity: 0; } }
+
+/* ---- Reveal (hero) / scroll-reveal (secciones) / contador ascendente ---- */
+.reveal { opacity: 0; transform: translateY(16px); animation: revealUp 600ms ease both; }
+.reveal--1 { animation-delay: 60ms; } .reveal--2 { animation-delay: 160ms; } .reveal--3 { animation-delay: 260ms; } .reveal--4 { animation-delay: 360ms; } .reveal--5 { animation-delay: 460ms; }
+@keyframes revealUp { to { opacity: 1; transform: none; } }
+.scroll-reveal { opacity: 0; transform: translateY(24px); transition: opacity 600ms ease, transform 600ms ease; }
+.scroll-reveal.is-visible { opacity: 1; transform: none; }
 .hero__lede {
   font-size: 18px;
   color: var(--text-secondary);
@@ -183,7 +225,8 @@ main > section {
   color: var(--text-muted);
 }
 
-.hero__mockup { display: flex; justify-content: center; }
+.hero__mockup { display: flex; flex-direction: column; align-items: center; gap: var(--space-sm); }
+@media (min-width: 900px) { .hero__mockup { margin-left: var(--space-xl); } }
 
 @media (min-width: 900px) {
   .hero { flex-direction: row; align-items: center; text-align: left; }
@@ -193,52 +236,38 @@ main > section {
 }
 
 /* =====================================================
-   GEOFENCING — banda de color, protagonismo
+   LA REFORMA (marco legal, datos reales)
    ===================================================== */
-.geofencing {
-  background: var(--primary);
-  color: #fff;
-  max-width: none !important;
-  padding: var(--space-3xl) var(--space-lg) !important;
-}
-.geofencing__inner {
-  max-width: var(--container);
-  margin: 0 auto;
-  display: grid;
-  gap: var(--space-2xl);
-}
-.geofencing h2 {
-  font-size: clamp(26px, 4vw, 34px);
-  margin: var(--space-md) 0 var(--space-md);
-}
-.geofencing p { color: rgba(255,255,255,0.85); font-size: 16px; max-width: 46ch; }
-
-.geofencing__compare {
-  display: grid;
-  gap: var(--space-lg);
-}
-.compare-list li {
-  display: flex; align-items: center; gap: var(--space-sm);
-  padding: var(--space-sm) 0;
-  font-weight: 500;
-}
-.compare-list--yes li::before {
+main > section:not(.hero)::before {
   content: '';
-  width: 20px; height: 20px; border-radius: 50%;
-  background: #fff;
-  flex-shrink: 0;
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M4 12.5l5 5L20 6.5'/%3E%3C/svg%3E") center/14px no-repeat;
+  display: block;
+  width: 64px; height: 4px;
+  background: var(--secondary);
+  border-radius: var(--radius-full);
+  margin: 0 auto var(--space-2xl);
 }
-.compare-list--no li { color: rgba(255,255,255,0.65); }
-.compare-list--no li::before {
-  content: '✕';
-  width: 20px; text-align: center;
-  flex-shrink: 0;
+#como-funciona, #planes { background: var(--surface); border-radius: var(--radius-xl); }
+.legal__grid { display: grid; gap: var(--space-xl); }
+@media (min-width: 860px) { .legal__grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 859px) {
+  .legal__grid { display: flex; gap: var(--space-lg); overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: var(--space-sm); -webkit-overflow-scrolling: touch; }
+  .legal-card { scroll-snap-align: center; min-width: 84%; flex-shrink: 0; }
 }
-
-@media (min-width: 860px) {
-  .geofencing__inner { grid-template-columns: 1.2fr 1fr; align-items: center; }
+.legal-card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  border: 1px solid var(--secondary);
+  transition: transform 200ms ease, box-shadow 200ms ease;
 }
+.legal-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lift); }
+.legal-card:hover h3 .icon { color: var(--secondary); }
+.legal-card--highlight { border-color: var(--primary); background: var(--primary-light); }
+.legal-card h3 { font-size: 17px; margin-bottom: var(--space-sm); display: flex; align-items: center; gap: var(--space-sm); }
+.legal-card h3 .icon { color: var(--primary); }
+.legal-card p { color: var(--text-secondary); font-size: 15px; }
+.legal-card .cite { display: block; margin-top: var(--space-md); font-size: 12.5px; color: var(--text-muted); border-top: 1px dashed var(--border); padding-top: var(--space-sm); }
+.legal-stat { font-size: 36px; font-weight: 800; color: var(--primary); line-height: 1; }
 
 /* =====================================================
    STEPS
@@ -252,8 +281,17 @@ main > section {
 }
 .step-card {
   background: var(--surface);
+  border: 1.5px solid var(--secondary);
   border-radius: var(--radius-lg);
   padding: var(--space-xl);
+  transition: transform 200ms ease;
+}
+.step-card:hover { transform: translateY(-4px); }
+@media (max-width: 759px) {
+  .steps__grid { gap: 0; }
+  .step-card { display: flex; align-items: flex-start; gap: var(--space-md); text-align: left; border: none; background: transparent; padding: var(--space-md) 0; position: relative; }
+  .step-card__number { margin-bottom: 0; flex-shrink: 0; position: relative; z-index: 1; }
+  .step-card:not(:last-child)::after { content: ''; position: absolute; left: 17px; top: 44px; bottom: -4px; width: 2px; background: var(--border); }
 }
 .step-card__number {
   display: inline-flex; align-items: center; justify-content: center;
@@ -282,6 +320,13 @@ main > section {
   border-radius: var(--radius-lg);
   padding: var(--space-xl);
   display: flex; flex-direction: column; gap: var(--space-sm);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+.modality-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lift); }
+.modality-card:hover .modality-card__icon { color: var(--secondary); }
+@media (max-width: 759px) {
+  .modalities__grid { display: flex; gap: var(--space-lg); overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: var(--space-sm); -webkit-overflow-scrolling: touch; }
+  .modality-card { scroll-snap-align: center; min-width: 78%; flex-shrink: 0; }
 }
 .modality-card--featured {
   border-color: var(--primary);
@@ -362,7 +407,10 @@ main > section {
   border-radius: var(--radius-lg);
   padding: var(--space-xl);
   display: flex; flex-direction: column;
+  transition: transform 200ms ease, box-shadow 200ms ease;
 }
+.price-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lift); }
+.price-card:hover .price-card__features li::before { background: var(--secondary); }
 .price-card--popular {
   border-color: var(--secondary);
   box-shadow: var(--shadow-lift);
@@ -486,5 +534,5 @@ main > section {
   outline-offset: 2px;
 }
 @media (prefers-reduced-motion: reduce) {
-  * { transition: none !important; scroll-behavior: auto !important; }
+  * { transition: none !important; scroll-behavior: auto !important; animation: none !important; }
 }
