@@ -47,6 +47,8 @@
 
         showMessage('success', result.data.message || 'Solicitud recibida, te contactaremos pronto.');
         submitBtn.textContent = 'Solicitud enviada';
+        submitBtn.classList.remove('btn--primary');
+        submitBtn.classList.add('btn--success');
         form.querySelectorAll('input, textarea, button').forEach(function (el) {
           el.disabled = true;
         });

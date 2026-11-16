@@ -110,6 +110,8 @@ main > section {
 .btn--sm { padding: 9px 16px; font-size: 14px; }
 .btn--lg { padding: 15px 26px; font-size: 16px; }
 .btn--block { width: 100%; }
+.btn--success { background: #0F9D6A; color: #fff; cursor: default; }
+.btn--success:hover { transform: none; box-shadow: none; }
 
 /* ---------- badge ---------- */
 .badge {
@@ -152,6 +154,30 @@ main > section {
 @media (min-width: 860px) {
   .navbar__links { display: flex; }
 }
+
+/* Barra simple de paginas legales (privacidad, terminos, eliminar-datos) */
+nav {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+  padding: var(--space-md) var(--space-lg);
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--space-lg);
+}
+nav .nav-logo {
+  font-size: 22px; font-weight: 800; color: var(--primary);
+  text-decoration: none;
+}
+nav .nav-links {
+  display: flex; gap: var(--space-lg);
+  list-style: none; margin: 0; padding: 0;
+  font-size: 15px; font-weight: 500;
+}
+nav .nav-links a {
+  color: var(--text-secondary); text-decoration: none;
+}
+nav .nav-links a:hover { color: var(--text-primary); }
 
 /* =====================================================
    HERO
