@@ -168,8 +168,8 @@
           payBtn.textContent = 'Continuar al pago';
           return;
         }
-        // TEMP: sandbox mientras se valida monto exacto y descuentos con MP. Cambiar a result.data.initPoint al pasar a producción real.
-        window.location.href = result.data.sandboxInitPoint;
+        // sandbox_init_point está deprecado por MercadoPago y causaba el checkout roto en pruebas (doc oficial: usar siempre init_point, sirve para cuentas de prueba y producción según el access token usado).
+        window.location.href = result.data.initPoint;
       })
       .catch(function () {
         showError('No se pudo conectar con el servidor. Intenta de nuevo.');
