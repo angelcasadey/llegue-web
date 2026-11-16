@@ -496,6 +496,31 @@ main > section:not(.hero)::before {
 .contact-card a { color: var(--primary); font-weight: 600; }
 
 /* =====================================================
+   FORMS
+   ===================================================== */
+.request-form { display: flex; flex-direction: column; gap: var(--space-lg); }
+.form-field { display: flex; flex-direction: column; gap: var(--space-xs); }
+.form-field label { font-size: 14px; font-weight: 600; color: var(--text-primary); }
+.form-field__hint { font-weight: 400; color: var(--text-muted); }
+.form-field input, .form-field textarea {
+  font-family: inherit;
+  font-size: 15px;
+  padding: 12px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: var(--text-primary);
+}
+.form-field input:focus, .form-field textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+.form-field textarea { resize: vertical; }
+.form-message { font-size: 14px; padding: 12px 14px; border-radius: var(--radius-md); }
+.form-message--success { background: var(--primary-light); color: var(--primary); }
+.form-message--error { background: #FDE8E8; color: var(--error); }
+
+/* =====================================================
    FOOTER
    ===================================================== */
 .footer {

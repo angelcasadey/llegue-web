@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solicitar eliminación de datos — Llegué</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .legal-container {
+      max-width: 800px;
+      margin: 100px auto 60px;
+      padding: 0 5%;
+    }
+    .legal-header { margin-bottom: 48px; }
+    .legal-header h1 {
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+    .legal-date {
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+    .legal-section { margin-bottom: 40px; }
+    .legal-section h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--primary);
+    }
+    .legal-section p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 32px;
+    }
+    .highlight-box {
+      background: rgba(16,185,129,0.08);
+      border-left: 3px solid var(--primary);
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 16px;
+    }
+    .highlight-box p {
+      margin-bottom: 0;
+      color: var(--text-primary);
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Llegué</a>
+    <ul class="nav-links">
+      <li><a href="index.html">← Volver al inicio</a></li>
+    </ul>
+  </nav>
+
+  <div class="legal-container">
+    <a href="index.html" class="back-link">← Volver al inicio</a>
+
+    <div class="legal-header">
+      <h1>Solicitar eliminación de datos</h1>
+      <p class="legal-date">Revisión manual — te contactaremos por correo</p>
+    </div>
+
+    <div class="highlight-box">
+      <p>Cualquier persona que haya usado la App Llegué, incluso si ya no la usa, puede solicitar la eliminación de sus datos personales. Esta solicitud es revisada manualmente por nuestro equipo, no es un proceso automático. Te responderemos por correo electrónico una vez procesada.</p>
+    </div>
+
+    <div class="legal-section">
+      <form id="deletion-request-form" class="request-form">
+        <div class="form-field">
+          <label for="name">Nombre</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-field">
+          <label for="email">Correo</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-field">
+          <label for="phone">Teléfono/WhatsApp <span class="form-field__hint">(opcional, para que podamos contactarte)</span></label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+        <div class="form-field">
+          <label for="company">Empresa <span class="form-field__hint">(opcional)</span></label>
+          <input type="text" id="company" name="company">
+        </div>
+        <div class="form-field">
+          <label for="reason">Motivo de la solicitud</label>
+          <textarea id="reason" name="reason" rows="4" required></textarea>
+        </div>
+
+        <div id="form-message" class="form-message" style="display:none;"></div>
+
+        <button type="submit" class="btn btn--primary btn--lg btn--block" id="submit-btn">Enviar solicitud</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-bottom" style="border-top: none;">
+      <span class="footer-copy">© 2026 Llegué. Todos los derechos reservados.</span>
+      <span class="footer-copy"><a href="privacidad.html" style="color: #94A3B8;">Política de Privacidad</a></span>
+    </div>
+  </footer>
+
+  <script src="js/eliminar-datos.js"></script>
+</body>
+</html>
