@@ -46,6 +46,7 @@
         }
 
         showMessage('success', result.data.message || 'Solicitud recibida, te contactaremos pronto.');
+        submitBtn.textContent = 'Solicitud enviada';
         form.querySelectorAll('input, textarea, button').forEach(function (el) {
           el.disabled = true;
         });
