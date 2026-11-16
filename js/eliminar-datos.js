@@ -13,8 +13,17 @@
     messageBox.style.display = 'block';
   }
 
+  var EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
   form.addEventListener('submit', function (event) {
     event.preventDefault();
+
+    var emailValue = document.getElementById('email').value.trim();
+    if (!EMAIL_PATTERN.test(emailValue)) {
+      showMessage('error', 'Escribe un correo valido, debe incluir @ y un dominio (ejemplo: nombre@dominio.com).');
+      document.getElementById('email').focus();
+      return;
+    }
 
     var body = {
       name: document.getElementById('name').value.trim(),
