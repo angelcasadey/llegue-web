@@ -120,6 +120,12 @@ a { color: var(--primary); text-decoration: none; }
   padding-right: 44px;
 }
 
+/* Hide the browser's own reveal/clear buttons (Edge) so only our toggle shows. */
+.admin-password input::-ms-reveal,
+.admin-password input::-ms-clear {
+  display: none;
+}
+
 .admin-password-toggle {
   position: absolute;
   top: 0;
