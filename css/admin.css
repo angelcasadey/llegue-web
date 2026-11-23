@@ -111,6 +111,45 @@ a { color: var(--primary); text-decoration: none; }
   outline-offset: 1px;
 }
 
+/* Password field with a show/hide toggle */
+.admin-password {
+  position: relative;
+}
+
+.admin-field .admin-password input {
+  padding-right: 44px;
+}
+
+.admin-password-toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.admin-password-toggle:hover {
+  color: var(--text-secondary);
+}
+
+.admin-password-toggle:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: -2px;
+}
+
+.admin-password-toggle svg[hidden] {
+  display: none;
+}
+
 .admin-btn {
   display: inline-block;
   width: 100%;

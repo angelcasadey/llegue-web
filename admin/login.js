@@ -14,6 +14,39 @@
     errorBox.style.display = 'none';
   }
 
+  // ─── Mostrar/ocultar contraseña ───
+  var passwordInput = document.getElementById('password');
+  var passwordToggle = document.getElementById('password-toggle');
+
+  function setPasswordVisible(visible) {
+    passwordInput.type = visible ? 'text' : 'password';
+    var label = visible ? 'Ocultar contraseña' : 'Mostrar contraseña';
+    passwordToggle.setAttribute('aria-pressed', visible ? 'true' : 'false');
+    passwordToggle.setAttribute('aria-label', label);
+    passwordToggle.setAttribute('title', label);
+    // En <svg> la propiedad .hidden no existe: hay que usar el atributo.
+    setHidden(passwordToggle.querySelector('.icon-show'), visible);
+    setHidden(passwordToggle.querySelector('.icon-hide'), !visible);
+  }
+
+  function setHidden(element, hidden) {
+    if (hidden) {
+      element.setAttribute('hidden', '');
+    } else {
+      element.removeAttribute('hidden');
+    }
+  }
+
+  passwordToggle.addEventListener('click', function () {
+    setPasswordVisible(passwordInput.type === 'password');
+  });
+
+  // Vuelve a ocultarla al enviar: no queda visible mientras se procesa
+  // y el navegador la sigue tratando como contraseña para guardarla.
+  form.addEventListener('submit', function () {
+    setPasswordVisible(false);
+  });
+
   form.addEventListener('submit', function (event) {
     event.preventDefault();
     hideError();
